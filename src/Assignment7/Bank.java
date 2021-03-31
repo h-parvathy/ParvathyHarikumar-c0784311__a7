@@ -8,13 +8,15 @@ import java.io.*;
 public class Bank {
     public static void main(String[] args) {
 
-        User[] user = new User[4];
+        User[] user = new User[4]; // Only 4 Users have Account
 
+        //Declaring and Intializing each Account
         user[0] = new User(1,"Parvathy","Harikumar", "PARVATHY_HARIKUMAR", 8000.00);
         user[1] = new User(2,"Harry","Potter", "HARRY_POTTER", 9971.29);
         user[2] = new User(3, "Pepper", "Potts", "PEPPER_POTTS", 9929292.92);
         user[3] = new User(4, "Tony","Stark","TONY_STARK",4492.99);
 
+        //Creating separate text file for each account holder.
         for(int i =0; i<4; i++) {
             try {
                 String filename = user[i].firstName+user[i].lastName+".txt";
@@ -29,6 +31,7 @@ public class Bank {
             }
         }
 
+        //For dialog box.
     JFrame choice;
         choice=new JFrame();
 
@@ -91,6 +94,7 @@ public class Bank {
 
         }
         else{
+            // if credentials are wrong
             JFrame f;
             f=new JFrame();
             JOptionPane.showMessageDialog(f,"Error!! Credentials or id wrong!!","Error",JOptionPane.WARNING_MESSAGE);

@@ -2,6 +2,7 @@ package Assignment7;
 
 import javax.swing.*;
 
+// Has user Account details like Name, id, balance etc
 public class Account {
     protected int id;
     protected String firstName;
@@ -54,17 +55,5 @@ public class Account {
     }
 
     public void setBalance(double balance) {  this.balance = balance; }
-
-
-    public void display(){
-        System.out.println("The current balance is: \n\t "+ getBalance());
-        JFrame f;
-        f=new JFrame();
-        JOptionPane.showMessageDialog(f,"Name : "+firstName+" "+lastName+"\n"+
-                "CUrrent Balance:" + getBalance()
-                ,"Account Details",JOptionPane.WARNING_MESSAGE);
-
-    }
-
 
 }

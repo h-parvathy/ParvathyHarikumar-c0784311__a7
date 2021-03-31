@@ -2,6 +2,8 @@ package Assignment7;
 
 import javax.swing.*;
 
+// Has user actions like updating, withdraw, check balance.
+// Child of Account
 public class User extends Account {
 //    private float amount;
 
@@ -36,6 +38,16 @@ public class User extends Account {
         f=new JFrame();
         JOptionPane.showMessageDialog(f,amount+ " has been debited from your account.\n"+
                 "Your current balance is: \n\t "+ getBalance());
+    }
+
+    public void display(){
+        System.out.println("The current balance is: \n\t "+ getBalance());
+        JFrame f;
+        f=new JFrame();
+        JOptionPane.showMessageDialog(f,"Name : "+firstName+" "+lastName+"\n"+
+                        "CUrrent Balance:" + getBalance()
+                ,"Account Details",JOptionPane.WARNING_MESSAGE);
+
     }
 
 }
