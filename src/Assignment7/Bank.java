@@ -40,17 +40,17 @@ public class Bank {
         String pass = JOptionPane.showInputDialog(choice, "Enter Your Password:");
         String cred = userName+"_"+pass;
         System.out.println(cred);
-        if ((user[userId].getCredential()).equals(cred)){
+        if ((user[userId-1].getCredential()).equals(cred)){
             int inputUpdate = JOptionPane.showConfirmDialog(null, "Do you want to add money to your account");
             if(inputUpdate==0){
                 double amount = Double.parseDouble(JOptionPane.showInputDialog(choice, "Enter the amount you want to add:"));
-                user[userId].update(amount);
-                user[userId].display();
+                user[userId-1].update(amount);
+                user[userId-1].display();
                 try {
-                    String filename = user[userId].firstName+user[userId].lastName+".txt";
+                    String filename = user[userId-1].firstName+user[userId].lastName+".txt";
                     FileWriter myWriter = new FileWriter(filename);
-                    String text= "Name : "+ user[userId].firstName+" " + user[userId].lastName+"\n" +
-                            "Current Balance: "+ user[userId].getBalance();
+                    String text= "Name : "+ user[userId-1].firstName+" " + user[userId].lastName+"\n" +
+                            "Current Balance: "+ user[userId-1].getBalance();
                     myWriter.write(text);
                     myWriter.close();
                 } catch (IOException e) {
@@ -61,13 +61,13 @@ public class Bank {
             int inputDebit = JOptionPane.showConfirmDialog(null, "Do you want to draw money to your account");
             if(inputDebit==0){
                 double amount = Double.parseDouble(JOptionPane.showInputDialog(choice, "Enter the amount you want to add:"));
-                user[userId].reduce(amount);
-                user[userId].display();
+                user[userId-1].reduce(amount);
+                user[userId-1].display();
                 try {
-                    String filename = user[userId].firstName+user[userId].lastName+".txt";
+                    String filename = user[userId-1].firstName+user[userId-1].lastName+".txt";
                     FileWriter myWriter = new FileWriter(filename);
-                    String text= "Name : "+ user[userId].firstName+" " + user[userId].lastName+"\n" +
-                            "Current Balance: "+ user[userId].getBalance();
+                    String text= "Name : "+ user[userId-1].firstName+" " + user[userId-1].lastName+"\n" +
+                            "Current Balance: "+ user[userId-1].getBalance();
                     myWriter.write(text);
                     myWriter.close();
                 } catch (IOException e) {
@@ -79,10 +79,10 @@ public class Bank {
             if(inputDisplay==0){
                 user[userId].display();
                 try {
-                    String filename = user[userId].firstName+user[userId].lastName+".txt";
+                    String filename = user[userId-1].firstName+user[userId-1].lastName+".txt";
                     FileWriter myWriter = new FileWriter(filename);
-                    String text= "Name : "+ user[userId].firstName+" " + user[userId].lastName+"\n" +
-                            "Current Balance: "+ user[userId].getBalance();
+                    String text= "Name : "+ user[userId-1].firstName+" " + user[userId-1].lastName+"\n" +
+                            "Current Balance: "+ user[userId-1].getBalance();
                     myWriter.write(text);
                     myWriter.close();
                 } catch (IOException e) {
