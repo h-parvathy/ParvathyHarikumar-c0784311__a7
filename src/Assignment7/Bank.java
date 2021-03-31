@@ -60,7 +60,7 @@ public class Bank {
             }
             int inputDebit = JOptionPane.showConfirmDialog(null, "Do you want to draw money to your account");
             if(inputDebit==0){
-                double amount = Double.parseDouble(JOptionPane.showInputDialog(choice, "Enter the amount you want to add:"));
+                double amount = Double.parseDouble(JOptionPane.showInputDialog(choice, "Enter the amount you want to withdraw:"));
                 user[userId-1].reduce(amount);
                 user[userId-1].display();
                 try {
